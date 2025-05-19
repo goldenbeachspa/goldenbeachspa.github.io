@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Multibahasa</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+    }
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    h1 {
+      color: #333;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    label {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Selamat Datang</h1>
+  <p id="description">Ini adalah situs web contoh multibahasa.</p>
+
+  <label id="language-label" for="language">Pilih Bahasa:</label><br>
+  <select id="language" onchange="changeLanguage()">
+    <option value="id">🇮🇩 Bahasa Indonesia</option>
+    <option value="en">🇬🇧 English</option>
+    <option value="de">🇩🇪 Deutsch</option>
+    <option value="ru">🇷🇺 Русский</option>
+    <option value="fr">🇫🇷 Français</option>
+    <option value="it">🇮🇹 Italiano</option>
+    <option value="ro">🇷🇴 Română</option>
+  </select>
+
+  <script>
+    const translations = {
+      id: {
+        label: "Pilih Bahasa:",
+        title: "Selamat Datang",
+        description: "Ini adalah situs web contoh multibahasa."
+      },
+      en: {
+        label: "Choose Language:",
+        title: "Welcome",
+        description: "This is a sample multilingual website."
+      },
+      de: {
+        label: "Sprache wählen:",
+        title: "Willkommen",
+        description: "Dies ist eine mehrsprachige Beispielseite."
+      },
+      ru: {
+        label: "Выберите язык:",
+        title: "Добро пожаловать",
+        description: "Это пример многоязычного сайта."
+      },
+      fr: {
+        label: "Choisir la langue :",
+        title: "Bienvenue",
+        description: "Ceci est un site Web multilingue d'exemple."
+      },
+      it: {
+        label: "Scegli la lingua:",
+        title: "Benvenuto",
+        description: "Questo è un sito web multilingue di esempio."
+      },
+      ro: {
+        label: "Alege limba:",
+        title: "Bun venit",
+        description: "Acesta este un site web multilingv de exemplu."
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById("language").value;
+      document.getElementById("title").textContent = translations[lang].title;
+      document.getElementById("description").textContent = translations[lang].description;
+      document.getElementById("language-label").textContent = translations[lang].label;
+    }
+  </script>
+
+
+</body></html>
