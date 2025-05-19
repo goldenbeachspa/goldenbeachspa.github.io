@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Website 7 Bahasa</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    select { font-size: 16px; padding: 5px; }
+    img { width: 20px; vertical-align: middle; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <h1 id="judul">Selamat Datang!</h1>
+  <p id="teks">Ini adalah website multibahasa sederhana.</p>
+
+  <br><br>
+  <select onchange="gantiBahasa(this.value)">
+    <option value="id">🇮🇩 Indonesia</option>
+    <option value="en">🇬🇧 English</option>
+    <option value="fr">🇫🇷 Français</option>
+    <option value="it">🇮🇹 Italiano</option>
+    <option value="de">🇩🇪 Deutsch</option>
+    <option value="ru">🇷🇺 Русский</option>
+    <option value="ro">🇷🇴 Română</option>
+  </select>
+
+  <script>
+    const terjemahan = {
+      id: { judul: "Selamat Datang!", teks: "Ini adalah website multibahasa sederhana." },
+      en: { judul: "Welcome!", teks: "This is a simple multilingual website." },
+      fr: { judul: "Bienvenue!", teks: "Ceci est un site multilingue simple." },
+      it: { judul: "Benvenuto!", teks: "Questo è un semplice sito multilingue." },
+      de: { judul: "Willkommen!", teks: "Dies ist eine einfache mehrsprachige Website." },
+      ru: { judul: "Добро пожаловать!", teks: "Это простой многоязычный сайт." },
+      ro: { judul: "Bun venit!", teks: "Acesta este un site simplu multilingv." },
+    };
+
+    function gantiBahasa(kode) {
+      document.getElementById("judul").innerText = terjemahan[kode].judul;
+      document.getElementById("teks").innerText = terjemahan[kode].teks;
+    }
+  </script>
+</body>
+</html>
